@@ -1,0 +1,102 @@
+{
+  "name": "Procurement Orchestration",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "1",
+      "name": "Manual Trigger",
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "command": "bash -lc 'cd /path/to/project-2-ai-procurement-agent && source .venv/bin/activate && python data/generate_synthetic.py --out-dir data'"
+      },
+      "id": "2",
+      "name": "Generate Synthetic Data",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [540, 300]
+    },
+    {
+      "parameters": {
+        "command": "bash -lc 'cd /path/to/project-2-ai-procurement-agent && source .venv/bin/activate && python cv/table_detect.py --image data/synthetic_table.png --out-dir outputs'"
+      },
+      "id": "3",
+      "name": "Detect Tables",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [860, 300]
+    },
+    {
+      "parameters": {
+        "command": "bash -lc 'cd /path/to/project-2-ai-procurement-agent && source .venv/bin/activate && python -m rag.index --data-dir data --persist-dir chroma --collection procurement_docs'"
+      },
+      "id": "4",
+      "name": "Index Documents",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [1180, 300]
+    },
+    {
+      "parameters": {
+        "command": "bash -lc 'cd /path/to/project-2-ai-procurement-agent && source .venv/bin/activate && python -m rag.query --query \"Which vendor appears most often in the sample data?\" --persist-dir chroma --collection procurement_docs --show-sources'"
+      },
+      "id": "5",
+      "name": "Query RAG",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [1500, 300]
+    }
+  ],
+  "connections": {
+    "Manual Trigger": {
+      "main": [
+        [
+          {
+            "node": "Generate Synthetic Data",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Generate Synthetic Data": {
+      "main": [
+        [
+          {
+            "node": "Detect Tables",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Detect Tables": {
+      "main": [
+        [
+          {
+            "node": "Index Documents",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Index Documents": {
+      "main": [
+        [
+          {
+            "node": "Query RAG",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "1"
+}

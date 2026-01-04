@@ -1,0 +1,8 @@
+opencv-python
+numpy
+langchain
+langchain-google-genai
+chromadb
+python-dotenv
+reportlab
+pypdf
